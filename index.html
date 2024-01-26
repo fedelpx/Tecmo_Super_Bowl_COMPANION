@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecmo Super Bowl Stats</title>
+    <!-- Your existing styles here -->
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Green background color like grass */
+            color: #FFFFFF; /* White text */
+        }
+
+        header {
+            
+            background-color: #000000; /* Darker green header background */
+            color: #FFFFFF;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #0c0d0c; /* Darker green section background */
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #FFA500; /* Orange heading text */
+        }
+
+        p {
+            color: #FFFFFF;
+        }
+
+        footer {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img id="titleImage" src="Tecmo2024.png" alt="Grass Image">
+        <h1>Tecmo Super Bowl Stats</h1>
+    </header>
+    <h1>Brady's Legend</h1>
+<div id="sectionsContainer">
+    <section>
+        <h2>Season Year</h2>
+        <label for="seasonYearInput">Enter Season Year:</label>
+        <input type="text" id="seasonYearInput">
+    </section>
+    
+    <section> 
+        <h2>Team</h2>
+        <label for="teamInput">Enter Team:</label>
+        <input type="text" id="teamInput">
+    </section>
+
+    <section>
+        <h2>Season Record</h2>
+        <label for="seasonInput">Enter Season Record:</label>
+        <input type="text" id="seasonInput">
+    </section>
+
+    <section>
+        <h2>Division Record</h2>
+        <label for="divisionInput">Enter Division Record:</label>
+        <input type="text" id="divisionInput">
+    </section>
+</div>
+<button onclick="addNewSection()">Add New Section</button>
+    
+    <section>
+        <h1>Bills Allen Succession</h1>
+        <h2>Team</h2>
+        <label for="teamInput">Enter Team:</label>
+        <input type="text" id="teamInput">
+    </section>
+
+    <section>
+        <h2>Season Record</h2>
+        <label for="seasonInput">Enter Season Record:</label>
+        <input type="text" id="seasonInput">
+    </section>
+
+    <section>
+        <h2>Division Record</h2>
+        <label for="divisionInput">Enter Division Record:</label>
+        <input type="text" id="divisionInput">
+    </section>
+
+    <section>
+        <h1>TB12- Hall of Fame Edition</h1>
+        <h2>Team</h2>
+        <label for="teamInput">Enter Team:</label>
+        <input type="text" id="teamInput">
+    </section>
+
+    <section>
+        <h2>Season Record</h2>
+        <label for="seasonInput">Enter Season Record:</label>
+        <input type="text" id="seasonInput">
+    </section>
+
+    <section>
+        <h2>Division Record</h2>
+        <label for="divisionInput">Enter Division Record:</label>
+        <input type="text" id="divisionInput">
+    </section>
+
+    <section>
+        <h1>USFL Washington Federals</h1>
+        <h2>Team</h2>
+        <label for="teamInput">Enter Team:</label>
+        <input type="text" id="teamInput">
+    </section>
+
+    <section>
+        <h2>Season Record</h2>
+        <label for="seasonInput">Enter Season Record:</label>
+        <input type="text" id="seasonInput">
+    </section>
+
+    <section>
+        <h2>Division Record</h2>
+        <label for="divisionInput">Enter Division Record:</label>
+        <input type="text" id="divisionInput">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tecmo Super Bowl Stats. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Save data to local storage when the page is unloaded
+        window.addEventListener('beforeunload', function () {
+            localStorage.setItem('team', document.getElementById('teamInput').value);
+            localStorage.setItem('season', document.getElementById('seasonInput').value);
+            localStorage.setItem('division', document.getElementById('divisionInput').value);
+            localStorage.setItem('seasonYear', document.getElementById('seasonYearInput').value);
+        });
+
+        // Retrieve data from local storage when the page is loaded
+        document.getElementById('teamInput').value = localStorage.getItem('team') || '';
+        document.getElementById('seasonInput').value = localStorage.getItem('season') || '';
+        document.getElementById('divisionInput').value = localStorage.getItem('division') || '';
+        document.getElementById('seasonYearInput').value = localStorage.getItem('seasonYear') || '';
+
+        function addNewSection() {
+            // Clone the first section and append it to the container
+            const firstSection = document.querySelector('#sectionsContainer section:first-child');
+            const newSection = firstSection.cloneNode(true);
+            document.querySelector('#sectionsContainer').appendChild(newSection);
+        }
+    </script>
+
+</body>
+</html>
